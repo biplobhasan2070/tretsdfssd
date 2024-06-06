@@ -82,7 +82,6 @@ if access_token:
             x = ("\nCOINS ADDED >>> " + str(ran) + "\n")
             y = (resp.text)
             print(x + "\n\n" + y + "\n")
-            #requests.get("https://api.telegram.org/bot6772698049:AAHgTyaSWkSqA9WIeh8P9hMATS-edmF6lZk/sendmessage?chat_id=1226270709&text=" + x + "\n" + y)
             time.sleep(270)
 else:
     print("Initial access token fetch failed, exiting...")
