@@ -11,7 +11,7 @@ def get_access_token():
     headers = {
         'Host': 'api.tapswap.ai',
         'Content-Type': 'application/json',
-        'X-Cv': '609',
+        'X-Cv': '618',
         'Accept': '*/*',
         'Sec-Fetch-Site': 'cross-site',
         'Accept-Language': 'en-GB,en;q=0.9',
@@ -27,7 +27,7 @@ def get_access_token():
     }
 
     payload = {
-        "init_data": "query_id=AAEDr20KAwAAAAOvbQpF0MQs&user=%7B%22id%22%3A6617411331%2C%22first_name%22%3A%22Nafis%22%2C%22last_name%22%3A%22Fuad%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D&auth_date=1717263385&hash=545bf1a08f18b5dda41f74e4b547c590504fde3c3a814321ab51a5a82e948e26",
+        "init_data": "query_id=AAEDr20KAwAAAAOvbQo2qIDJ&user=%7B%22id%22%3A6617411331%2C%22first_name%22%3A%22Nafis%22%2C%22last_name%22%3A%22Fuad%22%2C%22language_code%22%3A%22en%22%2C%22allows_write_to_pm%22%3Atrue%7D&auth_date=1717686793&hash=be0493d6dbe08d59651a264c67a8fad68f1adae763df6c67e79b47f1ae838167",
         "referrer": "",
         "bot_key": "app_bot_2"
     }
@@ -46,16 +46,16 @@ access_token = get_access_token()
 
 if access_token:
     for i in range(9999999):
-        ran = random.randint(110, 120)
+        ran = random.randint(130, 150)
         url = "https://api.tapswap.ai/api/player/submit_taps"
         
         headers = CaseInsensitiveDict()
         headers["Host"] = "api.tapswap.ai"
         headers["Content-Type"] = "application/json"
-        headers["X-Cv"] = "609"
+        headers["X-Cv"] = "618"
         headers["Accept"] = "*/*"
         headers["Authorization"] = f"Bearer {access_token}"
-        headers["Content-Id"] = "772714"
+        headers["Content-Id"] = "6617004581"
         headers["Sec-Fetch-Site"] = "cross-site"
         headers["Accept-Language"] = "en-GB,en;q=0.9"
         headers["Accept-Encoding"] = "gzip, deflate, br"
@@ -68,7 +68,7 @@ if access_token:
         headers["Sec-Fetch-Dest"] = "empty"
         headers["Connection"] = "keep-alive"
         
-        data = json.dumps({"taps": ran, "time": 1717263510834})
+        data = json.dumps({"taps": ran, "time": 1717686929994})
         
         resp = requests.post(url, headers=headers, data=data)
 
@@ -82,6 +82,7 @@ if access_token:
             x = ("\nCOINS ADDED >>> " + str(ran) + "\n")
             y = (resp.text)
             print(x + "\n\n" + y + "\n")
+            #requests.get("https://api.telegram.org/bot6772698049:AAHgTyaSWkSqA9WIeh8P9hMATS-edmF6lZk/sendmessage?chat_id=1226270709&text=" + x + "\n" + y)
             time.sleep(270)
 else:
     print("Initial access token fetch failed, exiting...")
